@@ -2,6 +2,12 @@
 Thumbs.db
 ehthumbs.db
 
+#API key files and such
+APIkey.txt
+Telegramkey.txt
+TMDBkey.txt
+
+
 # Folder config file
 Desktop.ini
 
