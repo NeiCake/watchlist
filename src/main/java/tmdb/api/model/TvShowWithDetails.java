@@ -2,102 +2,127 @@ package tmdb.api.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
 import com.google.gson.annotations.SerializedName;
 
-public class TvShowWithDetails {
 
+//@Entity
+//@Table(name = "shows", schema = "telegrambot")
+public class TvShowWithDetails {
 
 	// 20170511173201
 	// https://api.themoviedb.org/3/tv/1422?api_key=c946330fbfdd3010a74137465576f3a2
 
+	//@Transient
 	@SerializedName("backdrop_path")
 	private String backdropPath;
-
+	//@Transient
 	@SerializedName("created_by")
 	private List<Creator> createdBy;
-
+	//@Transient
 	@SerializedName("episode_run_time")
 	private List<String> episodeRunTime;
-
+	//@Transient
 	@SerializedName("first_air_date")
 	private String firstAirDate;
-
+	//@Transient
 	@SerializedName("genres")
 	private List<Genre> genres;
-
+	//@Transient
 	@SerializedName("homepage")
 	private String homepage;
 
 	@SerializedName("id")
+	//@Id
 	private String id;
-
+//	@Transient
 	@SerializedName("in_production")
 	private String inProduction;
-
+	//@Transient
 	@SerializedName("languages")
 	private List<String> languages;
-
+	//@Transient
 	@SerializedName("last_air_date")
 	private String lastAirDate;
-
+	//@Transient
 	@SerializedName("name")
 	private String name;
-
+	//@Transient
 	@SerializedName("networks")
 	private List<Network> networks;
 
+	//@Column(name="numberOfEpisodes")
 	@SerializedName("number_of_episodes")
 	private String numberOfEpisodes;
 
+	//@Column(name="numberOfSeasons")
 	@SerializedName("number_of_seasons")
 	private String numberOfSeasons;
-
+	//@Transient
 	@SerializedName("origin_country")
 	private List<String> originCountry;
-
+	//@Transient
 	@SerializedName("original_language")
 	private String originalLanguage;
-
+	//@Transient
 	@SerializedName("original_name")
 	private String originalName;
-
+	//@Transient
 	@SerializedName("overview")
 	private String overview;
-
+	//@Transient
 	@SerializedName("popularity")
 	private String popularity;
-
+	//@Transient
 	@SerializedName("poster_path")
 	private String posterPath;
-
+	//@Transient
 	@SerializedName("production_companies")
 	private List<String> productionCompanies;
-
+	//@Transient
 	@SerializedName("seasons")
 	private List<Season> seasons;
-
+	//@Column(name = "status")
 	@SerializedName("status")
 	private String status;
-
+	//@Transient
 	@SerializedName("type")
 	private String type;
-
+	//@Transient
 	@SerializedName("vote_average")
 	private String voteAverage;
-
+	//@Transient
 	@SerializedName("vote_count")
 	private String voteCount;
 
-	public TvShowWithDetails(){
+
+//	@ManyToMany(mappedBy="watchedShows")
+//	private List <UserM> usersWatching;
+//	public List<UserM> getUsersWatching() {
+//		return usersWatching;
+//	}
+//
+//	public void setUsersWatching(List<UserM> pUsersWatching) {
+//		usersWatching = pUsersWatching;
+//	}
+
+	public TvShowWithDetails() {
 
 	}
 
-	public TvShowWithDetails(String backdropPath, List<Creator> createdBy, List<String> episodeRunTime, String firstAirDate,
-			List<Genre> genres, String homepage, String id, String inProduction, List<String> languages,
-			String lastAirDate, String name, List<Network> networks, String numberOfEpisodes, String numberOfSeasons,
-			List<String> originCountry, String originalLanguage, String originalName, String overview,
-			String popularity, String posterPath, List<String> productionCompanies, List<Season> seasons, String status,
-			String type, String voteAverage, String voteCount) {
+	public TvShowWithDetails(String backdropPath, List<Creator> createdBy, List<String> episodeRunTime,
+			String firstAirDate, List<Genre> genres, String homepage, String id, String inProduction,
+			List<String> languages, String lastAirDate, String name, List<Network> networks, String numberOfEpisodes,
+			String numberOfSeasons, List<String> originCountry, String originalLanguage, String originalName,
+			String overview, String popularity, String posterPath, List<String> productionCompanies,
+			List<Season> seasons, String status, String type, String voteAverage, String voteCount) {
 		super();
 		this.backdropPath = backdropPath;
 		this.createdBy = createdBy;

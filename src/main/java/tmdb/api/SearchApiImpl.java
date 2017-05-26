@@ -20,8 +20,8 @@ public class SearchApiImpl implements SearchApi {
 
 		
 		SearchApi api = new SearchApiImpl();
-		System.out.println(api.searchSeriesByStringQuery("hello"));
-		System.out.println(api.getShowInfo(1422));
+	//	System.out.println(api.searchSeriesByStringQuery("hello"));
+	//	System.out.println(api.getShowInfo(1422));
 
 	}
 
@@ -31,7 +31,7 @@ public class SearchApiImpl implements SearchApi {
 		final GsonBuilder builder = new GsonBuilder();
 		final Gson gson = builder.create();
 		String json = HttpClient.connectAndGetJsonString(
-				"https://api.themoviedb.org/3/search/tv?page=1&language=en-US&api_key=" + API_KEY + "&query=" + query);
+				"https://api.themoviedb.org/3/search/tv?page=1&language=en-US&api_key=" + API_KEY + "&query=" + seriesName);
 		ResultWithListOfShows result = gson.fromJson(json, ResultWithListOfShows.class);
 
 		return result;

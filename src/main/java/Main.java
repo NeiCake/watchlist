@@ -1,7 +1,8 @@
-package base;
+
 
 import java.io.IOException;
 
+import base.UpdateHandlerImpl;
 import io.fouad.jtb.core.JTelegramBot;
 import io.fouad.jtb.core.exceptions.NegativeResponseException;
 import tmdb.api.model.ApiKeys;
@@ -13,6 +14,7 @@ public class Main {
 	public static void main(String[] args) {
 		JTelegramBot bot = new JTelegramBot(BOT_NAME, ApiKeys.getTelegramApiKey(), new UpdateHandlerImpl());
 
+	
 		try {
 			System.out.println(bot.getMe());
 		} catch (IOException e) {

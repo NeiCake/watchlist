@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
 
-public class TvShow {
+public class TvShow implements Comparable<TvShow>{
 
 	//poster_path: "/phJnv5R3Ch20cFTqsMRVLyWE84U.jpg",
 	@SerializedName("poster_path")
@@ -146,6 +146,10 @@ public class TvShow {
 	}
 	public void setOriginalName(String pOriginalName) {
 		originalName = pOriginalName;
+	}
+	@Override
+	public int compareTo(TvShow otherShow) {
+		return this.getPopularity().compareTo(otherShow.getPopularity());
 	}	
 	
 	
